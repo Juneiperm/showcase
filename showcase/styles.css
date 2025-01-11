@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0; /* Gray background for the content part */
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background: #fff;
+    position: fixed;
+    height: calc(100% - 40px); /* Reduced height for top and bottom spacing */
+    top: 20px; /* Space from the top */
+    left: 20px; /* Space from the left */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Full opacity shadow */
+    overflow-y: auto;
+    transition: background-color 0.3s, color 0.3s, width 0.3s;
+}
+
+.sidebar h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.sidebar input[type="text"], 
+.sidebar input[type="file"], 
+.sidebar input[type="number"] {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: calc(100% - 20px);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #555;
+}
+
+.slider-container, .custom-size-container, .dark-mode-container {
+    margin-top: 20px;
+}
+
+.content {
+    margin-left: 310px; /* Adjusted margin-left to account for the sidebar width, spacing, and shadow */
+    padding: 20px;
+    flex: 1;
+    transition: background-color 0.3s, color 0.3s, margin-left 0.3s;
+}
+
+#content-display {
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+    padding-right: 20px; /* Added padding to the right to avoid overlap */
+}
+
+.image-container img {
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    background: transparent; /* Allow transparent images to display correctly */
+    margin: 10px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+.sidebar.dark-mode {
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+.sidebar input[type="text"].dark-mode, 
+.sidebar input[type="file"].dark-mode, 
+.sidebar input[type="number"].dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.sidebar button.dark-mode {
+    background-color: #555;
+}
+
+.sidebar button.dark-mode:hover {
+    background-color: #777;
+}
+
+.content.dark-mode {
+    color: #fff;
+}
+
+#content-display.dark-mode {
+    color: #fff;
+}

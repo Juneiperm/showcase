@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcasing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/CellIJel/cellijel.github.io/refs/heads/main/stylesheets/favi.ico" type="image/x-icon" />
+    <script src="pdf.min.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Showcasing...</h1>
+        <input type="text" id="url-input" placeholder="Enter URL to showcase">
+        <label>
+            <input type="checkbox" id="auto-http-toggle" checked>
+            Auto-complete https://
+        </label>
+        <button onclick="showContent()">Show</button>
+        <input type="file" id="file-input" accept=".txt,.json,.py,image/*,.pdf" onchange="showFileContent()">
+        <div id="image-controls" style="display:none;">
+            <div class="slider-container">
+                <label for="size-slider">Choose Size:</label>
+                <input type="range" id="size-slider" min="50" max="500" value="200" oninput="updateImageSize(this.value)">
+                <span id="slider-value">200px</span>
+            </div>
+            <div class="custom-size-container">
+                <label for="custom-size">Or Enter Custom Size (px):</label>
+                <input type="number" id="custom-size" placeholder="e.g., 300" oninput="updateImageSize(this.value)">
+            </div>
+        </div>
+        <div class="dark-mode-container">
+            <label for="dark-mode-toggle">Dark Mode:</label>
+            <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
+        </div>
+    </div>
+    <div class="content">
+        <div id="content-display"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
